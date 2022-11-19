@@ -18,11 +18,13 @@
 
     /* Emit */
     "declaration": true,
+    "importsNotUsedAsValues": "error",
     "outDir": "./dist",
 
     /* Interop Constraints */
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
 
     /* Type Checking */
     "allowUnreachableCode": false,
