@@ -1,4 +1,4 @@
-import * as tsHTTP from "ts-http";
+import type * as tsHTTP from "ts-http";
 
 declare module "ts-http" {
   interface Context {
