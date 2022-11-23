@@ -6,6 +6,4 @@ declare module "ts-http" {
         reply: Buffer | string;
     }
 }
-export declare class EndResponseMiddleware implements tsHTTP.Middleware {
-    use(next: tsHTTP.Handler): tsHTTP.Handler;
-}
+export declare function EndResponseMiddleware(): tsHTTP.Middleware;

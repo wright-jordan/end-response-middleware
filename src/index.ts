@@ -7,15 +7,19 @@ declare module "ts-http" {
   }
 }
 
-export class EndResponseMiddleware implements tsHTTP.Middleware {
-  use(next: tsHTTP.Handler): tsHTTP.Handler {
-    return async function endResponseMiddleware(req, res, ctx) {
-      await next(req, res, ctx);
-      if (res.headersSent) {
-        return;
-      }
-      res.statusCode = ctx.status;
-      res.end(ctx.reply);
-    };
-  }
+function use(next: tsHTTP.Handler): tsHTTP.Handler {
+  return async function endResponseMiddleware(req, res, ctx) {
+    await next(req, res, ctx);
+    if (res.headersSent) {
+      return;
+    }
+    res.statusCode = ctx.status;
+    res.end(ctx.reply);
+  };
+}
+
+export function EndResponseMiddleware(): tsHTTP.Middleware {
+  return {
+    use,
+  };
 }
