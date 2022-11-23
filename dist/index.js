@@ -8,7 +8,7 @@ function use(next) {
         res.end(ctx.reply);
     };
 }
-export function EndResponseMiddleware() {
+export function EndResponse() {
     return {
         use,
     };
