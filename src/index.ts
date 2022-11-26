@@ -18,7 +18,7 @@ function use(next: tsHTTP.Handler): tsHTTP.Handler {
   };
 }
 
-export function EndResponse(): tsHTTP.Middleware {
+export function EndResponse() {
   return {
     use,
   };
