@@ -1,9 +1,12 @@
-/// <reference types="node" />
 import type * as tsHTTP from "ts-http";
 declare module "ts-http" {
     interface Context {
         status: number;
-        reply: Buffer | string;
+        reply: string;
     }
 }
-export declare function EndResponse(): tsHTTP.Middleware;
+declare function use(next: tsHTTP.Handler): tsHTTP.Handler;
+export declare function EndResponse(): {
+    use: typeof use;
+};
+export {};
